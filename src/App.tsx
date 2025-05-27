@@ -33,8 +33,6 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/certificado/:code" element={<CertificatePage />} />
-        <Route path="/verify/:code" element={<CertificatePage />} />
-        <Route path="/certificate/:code" element={<CertificatePage />} />
       </Routes>
     </Router>
   );
