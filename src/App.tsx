@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './presentation/layout/MainLayout';
 import HeroSection from './presentation/components/HeroSection';
 import LearningSection from './presentation/components/LearningSection';
@@ -8,8 +9,10 @@ import ModalitySection from './presentation/components/ModalitySection';
 import PricingSection from './presentation/components/PricingSection';
 import ContactForm from './presentation/components/ContactForm';
 import CertificateVerification from './presentation/components/CertificateVerification';
+import CertificatePage from './presentation/pages/CertificatePage';
 
-const App: React.FC = () => {
+// Página principal con todos los componentes
+const HomePage: React.FC = () => {
   return (
     <MainLayout>
       <HeroSection />
@@ -21,6 +24,19 @@ const App: React.FC = () => {
       <ContactForm />
       <CertificateVerification />
     </MainLayout>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/certificado/:code" element={<CertificatePage />} />
+        <Route path="/verify/:code" element={<CertificatePage />} />
+        <Route path="/certificate/:code" element={<CertificatePage />} />
+      </Routes>
+    </Router>
   );
 };
 

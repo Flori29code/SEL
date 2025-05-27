@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaSearch, FaCertificate, FaCheckCircle, FaTimesCircle, FaCalendarAlt, FaUser, FaGraduationCap, FaSpinner, FaDownload, FaEye } from 'react-icons/fa';
+import { FaSearch, FaCertificate, FaCheckCircle, FaTimesCircle, FaCalendarAlt, FaUser, FaGraduationCap, FaSpinner, FaDownload, FaEye, FaShare } from 'react-icons/fa';
 import { workerCertificateService } from '../../infrastructure/services/workerCertificateService';
 import { pdfCertificateService } from '../../infrastructure/services/pdfCertificateService';
 import type { Certificate } from '../../domain/types/certificate';
@@ -152,6 +152,38 @@ const CertificateVerification: React.FC = () => {
                     <p className="text-green-600">Este certificado es auténtico y está verificado</p>
                   </div>
 
+                  {/* Enlace directo */}
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+                    <h4 className="font-semibold text-blue-800 mb-2 flex items-center">
+                      <FaShare className="mr-2" />
+                      Enlace Directo para Compartir
+                    </h4>
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="text"
+                        value={`${window.location.origin}/certificado/${certificate.code}`}
+                        readOnly
+                        className="flex-1 px-3 py-2 bg-white border border-blue-300 rounded-lg text-sm font-mono"
+                      />
+                      <button
+                        onClick={() => {
+                          const url = `${window.location.origin}/certificado/${certificate.code}`;
+                          navigator.clipboard.writeText(url).then(() => {
+                            alert('¡Enlace copiado al portapapeles!');
+                          }).catch(() => {
+                            alert(`Enlace: ${url}`);
+                          });
+                        }}
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all text-sm"
+                      >
+                        Copiar
+                      </button>
+                    </div>
+                    <p className="text-blue-600 text-sm mt-2">
+                      💡 Comparte este enlace en LinkedIn, redes sociales o tu CV para verificación directa
+                    </p>
+                  </div>
+
                   <div className="bg-white rounded-xl p-6 card-shadow">
                     <div className="grid md:grid-cols-2 gap-6">
                       {/* Información del estudiante */}
@@ -209,53 +241,43 @@ const CertificateVerification: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Habilidades adquiridas */}
-                    <div className="mt-6 pt-6 border-t border-gray-200">
-                      <h4 className="font-bold text-darkText mb-4">Habilidades Certificadas</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {certificate.skills.map((skill, index) => (
-                          <div key={index} className="flex items-center">
-                            <FaCheckCircle className="text-green-500 mr-2 flex-shrink-0 text-sm" />
-                            <span className="text-gray-700 text-sm">{skill}</span>
-                          </div>
-                        ))}
+                    {/* Habilidades */}
+                    {certificate.skills && certificate.skills.length > 0 && (
+                      <div className="mt-6 pt-6 border-t border-gray-200">
+                        <h4 className="font-semibold text-darkText mb-3">Habilidades Certificadas</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {certificate.skills.map((skill, index) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
+                  </div>
 
-                    {/* Botones de acción */}
-                    <div className="mt-8 pt-6 border-t border-gray-200">
-                      <h4 className="font-bold text-darkText mb-4">Descargar Certificado</h4>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <button
-                          onClick={handlePreviewCertificate}
-                          disabled={isGeneratingPDF}
-                          className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                          {isGeneratingPDF ? (
-                            <FaSpinner className="animate-spin mr-2" />
-                          ) : (
-                            <FaEye className="mr-2" />
-                          )}
-                          {isGeneratingPDF ? 'Generando...' : 'Vista Previa'}
-                        </button>
-                        
-                        <button
-                          onClick={handleDownloadPDF}
-                          disabled={isGeneratingPDF}
-                          className="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                          {isGeneratingPDF ? (
-                            <FaSpinner className="animate-spin mr-2" />
-                          ) : (
-                            <FaDownload className="mr-2" />
-                          )}
-                          {isGeneratingPDF ? 'Generando...' : 'Descargar PDF'}
-                        </button>
-                      </div>
-                      <p className="text-center text-gray-600 text-sm mt-3">
-                        El certificado se generará con tu nombre y datos personalizados
-                      </p>
-                    </div>
+                  {/* Acciones */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                    <button
+                      onClick={handlePreviewCertificate}
+                      disabled={isGeneratingPDF}
+                      className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all disabled:opacity-50"
+                    >
+                      {isGeneratingPDF ? <FaSpinner className="animate-spin" /> : <FaEye />}
+                      Vista Previa
+                    </button>
+                    
+                    <button
+                      onClick={handleDownloadPDF}
+                      disabled={isGeneratingPDF}
+                      className="flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all disabled:opacity-50"
+                    >
+                      {isGeneratingPDF ? <FaSpinner className="animate-spin" /> : <FaDownload />}
+                      Descargar PDF
+                    </button>
                   </div>
                 </div>
               )}
