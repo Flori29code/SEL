@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Google Credentials
+src/infrastructure/config/google-credentials.json
+src/infrastructure/config/gen-lang-client-*.json

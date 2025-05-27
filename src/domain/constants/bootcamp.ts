@@ -173,7 +173,7 @@ export const CURRICULUM = {
 
 export const PAYMENT_METHODS = [
   { name: "PayPal", logo: "/assets/images/paypal.png" },
-  { name: "Yape", logo: "/assets/images/yape.png" },
+  { name: "Yape", logo: "/assets/images/payment-methods/yape.svg" },
   { name: "Plin", logo: "/assets/images/plin.png" },
   { name: "Interbank", logo: "/assets/images/interbank.png" },
   { name: "Scotiabank", logo: "/assets/images/scotiabank.png" },

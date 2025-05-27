@@ -167,10 +167,22 @@ const PricingSection: React.FC = () => {
                         className="bg-white rounded-lg p-4 flex flex-col items-center justify-center card-shadow hover:scale-105 transition-transform animate-slide-up"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
-                        <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
-                          <span className="text-xs font-bold text-gray-600">
-                            {method.name.slice(0, 3).toUpperCase()}
-                          </span>
+                        <div className="w-12 h-12 flex items-center justify-center mb-2">
+                          <img 
+                            src={method.logo} 
+                            alt={method.name}
+                            className="w-full h-full object-contain rounded-lg"
+                            onError={(e) => {
+                              // Fallback si la imagen no carga
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `<span class="text-xs font-bold text-gray-600">${method.name.slice(0, 3).toUpperCase()}</span>`;
+                                parent.className = "w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-2";
+                              }
+                            }}
+                          />
                         </div>
                         <span className="text-sm font-medium text-gray-700">{method.name}</span>
                       </div>

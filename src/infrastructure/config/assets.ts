@@ -11,7 +11,7 @@ export const ASSETS_CONFIG = {
     placeholder: '/assets/images/icons/placeholder.svg'
   },
   paymentMethods: {
-    yape: '/assets/images/payment-methods/yape.png',
+    yape: '/assets/images/payment-methods/yape.svg',
     plin: '/assets/images/payment-methods/plin.png',
     interbank: '/assets/images/payment-methods/interbank.png',
     scotiabank: '/assets/images/payment-methods/scotiabank.png',

@@ -24,6 +24,7 @@ const Header: React.FC = () => {
     { label: 'Instructor', id: 'instructor' },
     { label: 'Modalidad', id: 'modality' },
     { label: 'Precios', id: 'pricing' },
+    { label: 'Verificar Certificado', id: 'certificate-verification' },
     { label: 'Inscríbete', id: 'contact' }
   ];
 

@@ -7,6 +7,7 @@ import InstructorSection from './presentation/components/InstructorSection';
 import ModalitySection from './presentation/components/ModalitySection';
 import PricingSection from './presentation/components/PricingSection';
 import ContactForm from './presentation/components/ContactForm';
+import CertificateVerification from './presentation/components/CertificateVerification';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
       <ModalitySection />
       <PricingSection />
       <ContactForm />
+      <CertificateVerification />
     </MainLayout>
   );
 };
