@@ -6,6 +6,7 @@ import CurriculumSection from './presentation/components/CurriculumSection';
 import InstructorSection from './presentation/components/InstructorSection';
 import ModalitySection from './presentation/components/ModalitySection';
 import PricingSection from './presentation/components/PricingSection';
+import ContactForm from './presentation/components/ContactForm';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <InstructorSection />
       <ModalitySection />
       <PricingSection />
+      <ContactForm />
     </MainLayout>
   );
 };

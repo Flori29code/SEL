@@ -23,7 +23,8 @@ const Header: React.FC = () => {
     { label: 'Plan de estudios', id: 'curriculum' },
     { label: 'Instructor', id: 'instructor' },
     { label: 'Modalidad', id: 'modality' },
-    { label: 'Precios', id: 'pricing' }
+    { label: 'Precios', id: 'pricing' },
+    { label: 'Inscríbete', id: 'contact' }
   ];
 
   const handleNavClick = (sectionId: string) => {
