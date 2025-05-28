@@ -17,7 +17,8 @@
 /* Component styles */
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, #004e89 0%, #007acc 100%);
+    /* Gradiente usando los colores de Softtek */
+    background: linear-gradient(135deg, #295F8A 0%, #376C39 100%);
   }
 
   .container-custom {
@@ -40,6 +41,14 @@
     @apply bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
   }
 
+  .btn-softtek-green {
+    @apply bg-softtek-green hover:bg-softtek-green/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
+  }
+
+  .btn-softtek-blue {
+    @apply bg-softtek-blue hover:bg-softtek-blue/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
+  }
+
   .card-shadow {
     @apply shadow-xl hover:shadow-2xl transition-shadow duration-300;
   }
@@ -55,6 +64,35 @@
   .animate-bounce-slow {
     animation: bounce 2s infinite;
   }
+
+  /* Estilos específicos para métodos de pago */
+  .payment-method-card {
+    @apply bg-white rounded-lg p-4 flex flex-col items-center justify-center card-shadow hover:scale-105 transition-all duration-300;
+    border: 2px solid transparent;
+  }
+
+  .payment-method-card:hover {
+    border-color: theme('colors.softtek.blue');
+    box-shadow: 0 10px 25px rgba(41, 95, 138, 0.15);
+  }
+
+  .payment-method-logo {
+    @apply w-12 h-12 object-contain rounded-lg mb-2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  /* Gradientes usando paleta Softtek */
+  .gradient-softtek {
+    background: linear-gradient(135deg, #295F8A 0%, #376C39 100%);
+  }
+
+  .gradient-softtek-reverse {
+    background: linear-gradient(135deg, #376C39 0%, #295F8A 100%);
+  }
+
+  .gradient-softtek-light {
+    background: linear-gradient(135deg, rgba(41, 95, 138, 0.1) 0%, rgba(55, 108, 57, 0.1) 100%);
+  }
 }
 
 /* Animations */
@@ -66,4 +104,29 @@
 @keyframes slideUp {
   0% { transform: translateY(20px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Estilos adicionales para la paleta Softtek */
+.text-softtek-green {
+  color: #376C39;
+}
+
+.text-softtek-blue {
+  color: #295F8A;
+}
+
+.bg-softtek-green {
+  background-color: #376C39;
+}
+
+.bg-softtek-blue {
+  background-color: #295F8A;
+}
+
+.border-softtek-green {
+  border-color: #376C39;
+}
+
+.border-softtek-blue {
+  border-color: #295F8A;
 }

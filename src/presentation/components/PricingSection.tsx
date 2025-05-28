@@ -114,7 +114,7 @@ const PricingSection: React.FC = () => {
                 {/* CTA Button */}
                 <button
                   onClick={handleWhatsAppClick}
-                  className="btn-primary w-full text-lg py-4 flex items-center justify-center animate-pulse"
+                  className="btn-softtek-green w-full text-lg py-4 flex items-center justify-center animate-pulse hover:bg-success/90"
                 >
                   <FaWhatsapp className="mr-3 text-xl" />
                   ¡Inscríbete Ahora por WhatsApp!
@@ -129,14 +129,14 @@ const PricingSection: React.FC = () => {
               <div className="animate-fade-in">
                 <div className="bg-lightBg rounded-2xl p-8">
                   <div className="flex items-center mb-6">
-                    <FaCreditCard className="text-2xl text-primary mr-3" />
+                    <FaCreditCard className="text-2xl text-softtek-blue mr-3" />
                     <h4 className="text-xl font-bold text-darkText">Métodos de Pago</h4>
                   </div>
 
                   {/* Información de pago para Perú */}
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
-                    <h5 className="font-bold text-green-800 mb-2">🇵🇪 Pago Nacional (Perú)</h5>
-                    <div className="text-sm text-green-700 space-y-1">
+                  <div className="bg-gradient-softtek-light border border-softtek-green/30 rounded-lg p-4 mb-4">
+                    <h5 className="font-bold text-softtek-green mb-2">🇵🇪 Pago Nacional (Perú)</h5>
+                    <div className="text-sm text-softtek-green/80 space-y-1">
                       <p><strong>Yape/Plin:</strong> {PAYMENT_INFO.peru.yape_plin.phone}</p>
                       <p><strong>BCP:</strong> {PAYMENT_INFO.peru.bcp.account}</p>
                       <p><strong>Interbank:</strong> {PAYMENT_INFO.peru.interbank.account}</p>
@@ -145,12 +145,12 @@ const PricingSection: React.FC = () => {
                   </div>
 
                   {/* Información de pago para LATAM */}
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-                    <h5 className="font-bold text-blue-800 mb-2">🌎 Pago Internacional (LATAM)</h5>
-                    <p className="text-sm text-blue-700 mb-1">
+                  <div className="bg-blue-50 border border-softtek-blue/30 rounded-lg p-4 mb-6">
+                    <h5 className="font-bold text-softtek-blue mb-2">🌎 Pago Internacional (LATAM)</h5>
+                    <p className="text-sm text-softtek-blue/80 mb-1">
                       <strong>Email:</strong> {PAYMENT_INFO.latam.email}
                     </p>
-                    <p className="text-sm text-blue-700">
+                    <p className="text-sm text-softtek-blue/80">
                       <strong>Titular:</strong> {PAYMENT_INFO.latam.name}
                     </p>
                   </div>
@@ -164,41 +164,41 @@ const PricingSection: React.FC = () => {
                     {PAYMENT_METHODS.map((method, index) => (
                       <div
                         key={method.name}
-                        className="bg-white rounded-lg p-4 flex flex-col items-center justify-center card-shadow hover:scale-105 transition-transform animate-slide-up"
+                        className="payment-method-card animate-slide-up"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <div className="w-12 h-12 flex items-center justify-center mb-2">
                           <img 
                             src={method.logo} 
                             alt={method.name}
-                            className="w-full h-full object-contain rounded-lg"
+                            className="payment-method-logo"
                             onError={(e) => {
                               // Fallback si la imagen no carga
                               const target = e.target as HTMLImageElement;
                               target.style.display = 'none';
                               const parent = target.parentElement;
                               if (parent) {
-                                parent.innerHTML = `<span class="text-xs font-bold text-gray-600">${method.name.slice(0, 3).toUpperCase()}</span>`;
-                                parent.className = "w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-2";
+                                parent.innerHTML = `<span class="text-xs font-bold text-softtek-blue">${method.name.slice(0, 3).toUpperCase()}</span>`;
+                                parent.className = "w-12 h-12 bg-gradient-softtek-light rounded-lg flex items-center justify-center mb-2 border border-softtek-blue/20";
                               }
                             }}
                           />
                         </div>
-                        <span className="text-sm font-medium text-gray-700">{method.name}</span>
+                        <span className="text-sm font-medium text-darkText">{method.name}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Payment Options */}
-                  <div className="space-y-4">
-                    <div className="bg-white rounded-lg p-4 border-l-4 border-accent">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white rounded-lg p-4 border-l-4 border-softtek-green">
                       <h5 className="font-bold text-darkText mb-2">💳 Pago único</h5>
                       <p className="text-sm text-gray-600">
                         Paga el curso completo y ahorra hasta {formatPrice(pricing.latam.original - pricing.latam.discounted, pricing.latam.currency)}
                       </p>
                     </div>
                     
-                    <div className="bg-white rounded-lg p-4 border-l-4 border-secondary">
+                    <div className="bg-white rounded-lg p-4 border-l-4 border-softtek-blue">
                       <h5 className="font-bold text-darkText mb-2">📅 Pago en cuotas</h5>
                       <p className="text-sm text-gray-600">
                         Consulta opciones de financiamiento disponibles
@@ -211,7 +211,7 @@ const PricingSection: React.FC = () => {
           </div>
 
           {/* Guarantee */}
-          <div className="mt-12 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white text-center animate-fade-in">
+          <div className="mt-12 gradient-softtek rounded-2xl p-8 text-white text-center animate-fade-in">
             <h3 className="text-2xl font-bold mb-4">Garantía de Satisfacción</h3>
             <p className="text-lg mb-6">
               Si no estás satisfecho con el contenido del curso en las primeras 2 semanas, 

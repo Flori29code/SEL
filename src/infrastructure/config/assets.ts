@@ -12,11 +12,12 @@ export const ASSETS_CONFIG = {
   },
   paymentMethods: {
     yape: '/assets/images/payment-methods/yape.svg',
-    plin: '/assets/images/payment-methods/plin.png',
-    interbank: '/assets/images/payment-methods/interbank.png',
-    scotiabank: '/assets/images/payment-methods/scotiabank.png',
-    bcp: '/assets/images/payment-methods/bcp.png',
-    bbva: '/assets/images/payment-methods/bbva.png'
+    plin: '/assets/images/payment-methods/plin.svg',
+    interbank: '/assets/images/payment-methods/interbank.svg',
+    scotiabank: '/assets/images/payment-methods/scotiabank.svg',
+    bcp: '/assets/images/payment-methods/bcp.svg',
+    bbva: '/assets/images/payment-methods/bbva.svg',
+    paypal: '/assets/images/payment-methods/paypal.svg'
   },
   backgrounds: {
     hero: '/assets/images/backgrounds/hero-bg.jpg',

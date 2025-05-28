@@ -172,13 +172,13 @@ export const CURRICULUM = {
 } as const;
 
 export const PAYMENT_METHODS = [
-  { name: "PayPal", logo: "/assets/images/paypal.png" },
+  { name: "PayPal", logo: "/assets/images/payment-methods/paypal.svg" },
   { name: "Yape", logo: "/assets/images/payment-methods/yape.svg" },
-  { name: "Plin", logo: "/assets/images/plin.png" },
-  { name: "Interbank", logo: "/assets/images/interbank.png" },
-  { name: "Scotiabank", logo: "/assets/images/scotiabank.png" },
-  { name: "BCP", logo: "/assets/images/bcp.png" },
-  { name: "BBVA", logo: "/assets/images/bbva.png" }
+  { name: "Plin", logo: "/assets/images/payment-methods/plin.svg" },
+  { name: "Interbank", logo: "/assets/images/payment-methods/interbank.svg" },
+  { name: "Scotiabank", logo: "/assets/images/payment-methods/scotiabank.svg" },
+  { name: "BCP", logo: "/assets/images/payment-methods/bcp.svg" },
+  { name: "BBVA", logo: "/assets/images/payment-methods/bbva.svg" }
 ] as const;
 
 export const PAYMENT_INFO = {
