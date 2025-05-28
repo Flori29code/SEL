@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:hostinger": "npm run build && npm run copy-htaccess",
+    "copy-htaccess": "powershell -Command \"Copy-Item 'public/.htaccess' 'dist/.htaccess'\"",
+    "copy-htaccess-unix": "cp public/.htaccess dist/",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "googleapis": "^149.0.0",

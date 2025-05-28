@@ -4,6 +4,7 @@ export const BOOTCAMP_INFO = {
   schedule: "Sábados",
   instructor: {
     name: "Jose Liza",
+    linkedin: "https://www.linkedin.com/in/jose-liza/",
     certifications: ["AWS", "Kubernetes", "Azure"],
     experience: "Arquitecto de Software con más de 10 años de experiencia en el diseño e implementación de soluciones cloud. Especialista en automatización de despliegues, seguridad de infraestructura y optimización de procesos DevOps. Ha liderado proyectos en múltiples industrias utilizando tecnologías como Kubernetes, Terraform y CI/CD con AWS y Azure."
   },

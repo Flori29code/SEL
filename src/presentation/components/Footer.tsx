@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
     {
       icon: FaLinkedin,
       label: 'LinkedIn',
-      url: 'https://linkedin.com/in/joseliza',
+      url: 'https://www.linkedin.com/in/jose-liza/',
       color: 'hover:text-blue-600'
     },
     {

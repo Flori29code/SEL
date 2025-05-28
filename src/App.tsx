@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './presentation/layout/MainLayout';
 import HeroSection from './presentation/components/HeroSection';
+import AboutSection from './presentation/components/AboutSection';
 import LearningSection from './presentation/components/LearningSection';
 import CurriculumSection from './presentation/components/CurriculumSection';
 import InstructorSection from './presentation/components/InstructorSection';
@@ -16,6 +17,7 @@ const HomePage: React.FC = () => {
   return (
     <MainLayout>
       <HeroSection />
+      <AboutSection />
       <LearningSection />
       <CurriculumSection />
       <InstructorSection />

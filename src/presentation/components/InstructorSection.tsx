@@ -41,17 +41,43 @@ const InstructorSection: React.FC = () => {
             <div className="bg-white rounded-2xl p-8 card-shadow">
               {/* Profile Header */}
               <div className="flex items-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-6">
-                  <span className="text-white font-bold text-2xl">
-                    {instructor.name.split(' ').map(n => n[0]).join('')}
-                  </span>
+                <div className="w-24 h-24 mr-6 flex-shrink-0">
+                  <img 
+                    src="/assets/images/instructor/docente.jpeg" 
+                    alt={`${instructor.name} - Senior DevOps Engineer`}
+                    className="w-full h-full object-cover rounded-full shadow-lg border-4 border-white hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      // Fallback si la imagen no carga
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  
+                  {/* Fallback - Avatar con iniciales (oculto por defecto) */}
+                  <div 
+                    className="w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg border-4 border-white"
+                    style={{ display: 'none' }}
+                  >
+                    <span className="text-white font-bold text-2xl">
+                      {instructor.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-darkText">{instructor.name}</h3>
                   <p className="text-secondary font-semibold">Senior DevOps Engineer</p>
                   <div className="flex items-center mt-2">
-                    <FaLinkedin className="text-secondary mr-2" />
-                    <span className="text-gray-600 text-sm">LinkedIn Profile</span>
+                    <FaLinkedin className="text-blue-600 mr-2" />
+                    <a 
+                      href={instructor.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 text-sm hover:text-blue-800 hover:underline transition-colors duration-200"
+                    >
+                      Ver perfil en LinkedIn
+                    </a>
                   </div>
                 </div>
               </div>

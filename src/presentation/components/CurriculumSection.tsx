@@ -126,7 +126,7 @@ const CurriculumSection: React.FC = () => {
             <p className="text-gray-600">Semanas de duración</p>
           </div>
           <div className="text-center bg-lightBg rounded-xl p-6">
-            <div className="text-3xl font-bold text-accent mb-2">54</div>
+            <div className="text-3xl font-bold text-accent mb-2">24</div>
             <p className="text-gray-600">Horas de formación</p>
           </div>
           <div className="text-center bg-lightBg rounded-xl p-6">

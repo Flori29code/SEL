@@ -19,13 +19,9 @@ const Header: React.FC = () => {
 
   const navigationItems = [
     { label: 'Inicio', id: 'hero' },
-    { label: 'Qué aprenderás', id: 'learning' },
-    { label: 'Plan de estudios', id: 'curriculum' },
-    { label: 'Instructor', id: 'instructor' },
-    { label: 'Modalidad', id: 'modality' },
-    { label: 'Precios', id: 'pricing' },
-    { label: 'Verificar Certificado', id: 'certificate-verification' },
-    { label: 'Inscríbete', id: 'contact' }
+    { label: 'Nosotros', id: 'about' },
+    { label: 'Cursos', id: 'learning' },
+    { label: 'Certificados', id: 'certificate-verification' }
   ];
 
   const handleNavClick = (sectionId: string) => {
@@ -68,6 +64,18 @@ const Header: React.FC = () => {
                 {item.label}
               </button>
             ))}
+            
+            {/* CTA Button */}
+            <button
+              onClick={() => handleNavClick('contact')}
+              className={`font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 ${
+                isScrolled 
+                  ? 'bg-primary text-white hover:bg-primary/90 shadow-lg' 
+                  : 'bg-accent text-white hover:bg-accent/90 shadow-lg'
+              }`}
+            >
+              Inscríbete
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -94,6 +102,16 @@ const Header: React.FC = () => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* CTA Button Mobile */}
+              <div className="px-6 py-3">
+                <button
+                  onClick={() => handleNavClick('contact')}
+                  className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-all duration-300"
+                >
+                  Inscríbete
+                </button>
+              </div>
             </nav>
           </div>
         )}

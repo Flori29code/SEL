@@ -1,5 +1,6 @@
 export interface Instructor {
   name: string;
+  linkedin: string;
   certifications: string[];
   experience: string;
 }
