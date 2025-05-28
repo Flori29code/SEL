@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCalendarAlt, FaClock, FaRocket, FaAws, FaDocker, FaCloud } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaAws, FaDocker, FaCloud } from 'react-icons/fa';
 import { SiKubernetes } from 'react-icons/si';
 import { BOOTCAMP_INFO } from '../../domain/constants/bootcamp';
 import { generateWhatsAppUrl } from '../../infrastructure/config/whatsapp';
@@ -26,12 +26,7 @@ const HeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-white animate-fade-in">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 md:px-4 md:py-2 mb-4 md:mb-6">
-              <FaRocket className="text-accent mr-2 text-sm md:text-base" />
-              <span className="text-xs md:text-sm font-medium">¡Nuevo Bootcamp 2025!</span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 md:mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 md:mb-6 mt-16 md:mt-20">
               {BOOTCAMP_INFO.name}
             </h1>
 
