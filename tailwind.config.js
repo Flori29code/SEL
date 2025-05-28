@@ -7,34 +7,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Paleta de colores de Softtek
+        // Paleta de colores real de Softtek
         softtek: {
-          green: '#376C39', // PMS 376 - Verde principal de Softtek
-          blue: '#295F8A',  // PMS 295 - Azul principal de Softtek
-          gray: '#6B7280',  // Cool Gray 11C - Gris corporativo
+          darkBlue: '#1a237e',    // Azul oscuro principal
+          purple: '#6a1b9a',      // Púrpura del gradiente
+          magenta: '#e91e63',     // Magenta del gradiente
+          cyan: '#00bcd4',        // Cian/turquesa de acentos
+          lightCyan: '#26c6da',   // Cian claro
         },
-        // Colores del tema actual actualizados con paleta Softtek
-        primary: '#295F8A',    // Azul Softtek como color primario
-        secondary: '#376C39',  // Verde Softtek como color secundario
-        accent: '#FF6B35',     // Mantener el naranja como acento
-        danger: '#EF4444',     // Rojo para alertas
-        success: '#376C39',    // Verde Softtek para éxito
-        warning: '#F59E0B',    // Amarillo para advertencias
-        info: '#295F8A',       // Azul Softtek para información
+        // Colores del tema actualizados con paleta real Softtek
+        primary: '#1a237e',       // Azul oscuro Softtek como color primario
+        secondary: '#6a1b9a',     // Púrpura Softtek como color secundario
+        accent: '#00bcd4',        // Cian Softtek como acento
+        danger: '#EF4444',        // Rojo para alertas
+        success: '#10B981',       // Verde para éxito
+        warning: '#F59E0B',       // Amarillo para advertencias
+        info: '#1a237e',          // Azul Softtek para información
         
         // Colores de texto y fondo
         darkText: '#1F2937',
         lightText: '#6B7280',
         lightBg: '#F9FAFB',
         
-        // Grises usando la paleta Softtek
+        // Grises
         gray: {
           50: '#F9FAFB',
           100: '#F3F4F6',
           200: '#E5E7EB',
           300: '#D1D5DB',
           400: '#9CA3AF',
-          500: '#6B7280',  // Cool Gray 11C de Softtek
+          500: '#6B7280',
           600: '#4B5563',
           700: '#374151',
           800: '#1F2937',

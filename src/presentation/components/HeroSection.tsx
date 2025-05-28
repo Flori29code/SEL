@@ -26,16 +26,16 @@ const HeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-white animate-fade-in">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <FaRocket className="text-accent mr-2" />
-              <span className="text-sm font-medium">¡Nuevo Bootcamp 2025!</span>
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 md:px-4 md:py-2 mb-4 md:mb-6">
+              <FaRocket className="text-accent mr-2 text-sm md:text-base" />
+              <span className="text-xs md:text-sm font-medium">¡Nuevo Bootcamp 2025!</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 md:mb-6">
               {BOOTCAMP_INFO.name}
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 md:mb-8 leading-relaxed">
               Domina las tecnologías más demandadas del mercado y conviértete en un 
               <span className="text-accent font-semibold"> DevOps Engineer</span> certificado
             </p>

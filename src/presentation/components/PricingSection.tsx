@@ -114,7 +114,7 @@ const PricingSection: React.FC = () => {
                 {/* CTA Button */}
                 <button
                   onClick={handleWhatsAppClick}
-                  className="btn-softtek-green w-full text-lg py-4 flex items-center justify-center animate-pulse hover:bg-success/90"
+                  className="btn-softtek-cyan w-full text-lg py-4 flex items-center justify-center animate-pulse hover:bg-accent/90 mt-6"
                 >
                   <FaWhatsapp className="mr-3 text-xl" />
                   ¡Inscríbete Ahora por WhatsApp!
@@ -129,35 +129,9 @@ const PricingSection: React.FC = () => {
               <div className="animate-fade-in">
                 <div className="bg-lightBg rounded-2xl p-8">
                   <div className="flex items-center mb-6">
-                    <FaCreditCard className="text-2xl text-softtek-blue mr-3" />
+                    <FaCreditCard className="text-2xl text-softtek-cyan mr-3" />
                     <h4 className="text-xl font-bold text-darkText">Métodos de Pago</h4>
                   </div>
-
-                  {/* Información de pago para Perú */}
-                  <div className="bg-gradient-softtek-light border border-softtek-green/30 rounded-lg p-4 mb-4">
-                    <h5 className="font-bold text-softtek-green mb-2">🇵🇪 Pago Nacional (Perú)</h5>
-                    <div className="text-sm text-softtek-green/80 space-y-1">
-                      <p><strong>Yape/Plin:</strong> {PAYMENT_INFO.peru.yape_plin.phone}</p>
-                      <p><strong>BCP:</strong> {PAYMENT_INFO.peru.bcp.account}</p>
-                      <p><strong>Interbank:</strong> {PAYMENT_INFO.peru.interbank.account}</p>
-                      <p><strong>Titular:</strong> {PAYMENT_INFO.peru.yape_plin.name}</p>
-                    </div>
-                  </div>
-
-                  {/* Información de pago para LATAM */}
-                  <div className="bg-blue-50 border border-softtek-blue/30 rounded-lg p-4 mb-6">
-                    <h5 className="font-bold text-softtek-blue mb-2">🌎 Pago Internacional (LATAM)</h5>
-                    <p className="text-sm text-softtek-blue/80 mb-1">
-                      <strong>Email:</strong> {PAYMENT_INFO.latam.email}
-                    </p>
-                    <p className="text-sm text-softtek-blue/80">
-                      <strong>Titular:</strong> {PAYMENT_INFO.latam.name}
-                    </p>
-                  </div>
-
-                  <p className="text-gray-600 mb-6">
-                    También acepta métodos de pago locales
-                  </p>
 
                   {/* Payment Methods Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
@@ -173,35 +147,60 @@ const PricingSection: React.FC = () => {
                             alt={method.name}
                             className="payment-method-logo"
                             onError={(e) => {
-                              // Fallback si la imagen no carga
                               const target = e.target as HTMLImageElement;
                               target.style.display = 'none';
                               const parent = target.parentElement;
                               if (parent) {
-                                parent.innerHTML = `<span class="text-xs font-bold text-softtek-blue">${method.name.slice(0, 3).toUpperCase()}</span>`;
-                                parent.className = "w-12 h-12 bg-gradient-softtek-light rounded-lg flex items-center justify-center mb-2 border border-softtek-blue/20";
+                                parent.innerHTML = `<div class="w-12 h-12 bg-softtek-cyan/20 rounded-lg flex items-center justify-center">
+                                  <span class="text-softtek-cyan font-bold text-xs">${method.name}</span>
+                                </div>`;
                               }
                             }}
                           />
                         </div>
-                        <span className="text-sm font-medium text-darkText">{method.name}</span>
+                        <span className="text-xs font-medium text-darkText">{method.name}</span>
                       </div>
                     ))}
                   </div>
 
+                  {/* Información de pago para Perú */}
+                  <div className="bg-gradient-softtek-light border border-softtek-cyan/30 rounded-lg p-4 mb-4">
+                    <h5 className="font-bold text-softtek-darkBlue mb-2">🇵🇪 Pago Nacional (Perú)</h5>
+                    <div className="text-sm text-softtek-purple/80 space-y-1">
+                      <p><strong>Yape/Plin:</strong> {PAYMENT_INFO.peru.yape_plin.phone}</p>
+                      <p><strong>BCP:</strong> {PAYMENT_INFO.peru.bcp.account}</p>
+                      <p><strong>Interbank:</strong> {PAYMENT_INFO.peru.interbank.account}</p>
+                      <p><strong>Titular:</strong> {PAYMENT_INFO.peru.yape_plin.name}</p>
+                    </div>
+                  </div>
+
+                  {/* Información de pago para Internacional */}
+                  <div className="bg-gradient-softtek-light border border-softtek-magenta/30 rounded-lg p-4 mb-6">
+                    <h5 className="font-bold text-softtek-darkBlue mb-2">🌎 Pago Internacional</h5>
+                    <div className="text-sm text-softtek-purple/80 space-y-1">
+                      <p><strong>Email:</strong> {PAYMENT_INFO.latam.email}</p>
+                      <p><strong>Método:</strong> {PAYMENT_INFO.latam.method}</p>
+                      <p><strong>Titular:</strong> {PAYMENT_INFO.latam.name}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-600 mb-6">
+                    También acepta métodos de pago locales
+                  </p>
+
                   {/* Payment Options */}
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-white rounded-lg p-4 border-l-4 border-softtek-green">
+                    <div className="bg-white rounded-lg p-4 border-l-4 border-softtek-cyan">
                       <h5 className="font-bold text-darkText mb-2">💳 Pago único</h5>
                       <p className="text-sm text-gray-600">
                         Paga el curso completo y ahorra hasta {formatPrice(pricing.latam.original - pricing.latam.discounted, pricing.latam.currency)}
                       </p>
                     </div>
                     
-                    <div className="bg-white rounded-lg p-4 border-l-4 border-softtek-blue">
+                    <div className="bg-white rounded-lg p-4 border-l-4 border-softtek-purple">
                       <h5 className="font-bold text-darkText mb-2">📅 Pago en cuotas</h5>
                       <p className="text-sm text-gray-600">
-                        Consulta opciones de financiamiento disponibles
+                        Divide el pago en 2 o 3 cuotas sin intereses adicionales
                       </p>
                     </div>
                   </div>
@@ -223,7 +222,7 @@ const PricingSection: React.FC = () => {
               </div>
               <div className="text-left">
                 <p className="font-bold">Garantía de 14 días</p>
-                <p className="text-white/80">Sin preguntas, sin complicaciones</p>
+                <p className="text-white/90">Sin preguntas, sin complicaciones</p>
               </div>
             </div>
           </div>

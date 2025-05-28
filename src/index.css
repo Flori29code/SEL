@@ -17,8 +17,8 @@
 /* Component styles */
 @layer components {
   .gradient-bg {
-    /* Gradiente usando los colores de Softtek */
-    background: linear-gradient(135deg, #295F8A 0%, #376C39 100%);
+    /* Gradiente usando los colores reales de Softtek */
+    background: linear-gradient(135deg, #1a237e 0%, #6a1b9a 50%, #e91e63 100%);
   }
 
   .container-custom {
@@ -41,12 +41,12 @@
     @apply bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
   }
 
-  .btn-softtek-green {
-    @apply bg-softtek-green hover:bg-softtek-green/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
+  .btn-softtek-cyan {
+    @apply bg-softtek-cyan hover:bg-softtek-cyan/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
   }
 
-  .btn-softtek-blue {
-    @apply bg-softtek-blue hover:bg-softtek-blue/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
+  .btn-softtek-purple {
+    @apply bg-softtek-purple hover:bg-softtek-purple/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
   }
 
   .card-shadow {
@@ -72,8 +72,8 @@
   }
 
   .payment-method-card:hover {
-    border-color: theme('colors.softtek.blue');
-    box-shadow: 0 10px 25px rgba(41, 95, 138, 0.15);
+    border-color: theme('colors.softtek.cyan');
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.15);
   }
 
   .payment-method-logo {
@@ -81,17 +81,21 @@
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
 
-  /* Gradientes usando paleta Softtek */
+  /* Gradientes usando paleta real Softtek */
   .gradient-softtek {
-    background: linear-gradient(135deg, #295F8A 0%, #376C39 100%);
+    background: linear-gradient(135deg, #1a237e 0%, #6a1b9a 50%, #e91e63 100%);
   }
 
   .gradient-softtek-reverse {
-    background: linear-gradient(135deg, #376C39 0%, #295F8A 100%);
+    background: linear-gradient(135deg, #e91e63 0%, #6a1b9a 50%, #1a237e 100%);
   }
 
   .gradient-softtek-light {
-    background: linear-gradient(135deg, rgba(41, 95, 138, 0.1) 0%, rgba(55, 108, 57, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.1) 0%, rgba(106, 27, 154, 0.1) 50%, rgba(233, 30, 99, 0.1) 100%);
+  }
+
+  .gradient-softtek-cyan {
+    background: linear-gradient(135deg, #00bcd4 0%, #26c6da 100%);
   }
 }
 
@@ -106,27 +110,51 @@
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Estilos adicionales para la paleta Softtek */
-.text-softtek-green {
-  color: #376C39;
+/* Estilos adicionales para la paleta real Softtek */
+.text-softtek-darkBlue {
+  color: #1a237e;
 }
 
-.text-softtek-blue {
-  color: #295F8A;
+.text-softtek-purple {
+  color: #6a1b9a;
 }
 
-.bg-softtek-green {
-  background-color: #376C39;
+.text-softtek-magenta {
+  color: #e91e63;
 }
 
-.bg-softtek-blue {
-  background-color: #295F8A;
+.text-softtek-cyan {
+  color: #00bcd4;
 }
 
-.border-softtek-green {
-  border-color: #376C39;
+.bg-softtek-darkBlue {
+  background-color: #1a237e;
 }
 
-.border-softtek-blue {
-  border-color: #295F8A;
+.bg-softtek-purple {
+  background-color: #6a1b9a;
+}
+
+.bg-softtek-magenta {
+  background-color: #e91e63;
+}
+
+.bg-softtek-cyan {
+  background-color: #00bcd4;
+}
+
+.border-softtek-darkBlue {
+  border-color: #1a237e;
+}
+
+.border-softtek-purple {
+  border-color: #6a1b9a;
+}
+
+.border-softtek-magenta {
+  border-color: #e91e63;
+}
+
+.border-softtek-cyan {
+  border-color: #00bcd4;
 }
