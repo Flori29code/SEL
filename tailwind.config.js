@@ -15,6 +15,19 @@ export default {
           cyan: '#00bcd4',        // Cian/turquesa de acentos
           lightCyan: '#26c6da',   // Cian claro
         },
+        // Paleta de colores Nuppi
+        nuppi: {
+          // Colores Primarios
+          verde: '#00B652',       // Verde principal
+          turquesaClaro: '#A8FFCE', // Turquesa claro
+          azulOscuro: '#00274B',  // Azul oscuro
+          blancoGris: '#D1D1D6',  // Blanco gris
+          // Colores Secundarios
+          grisOscuro: '#2D2D2D',  // Gris oscuro
+          turquesaMarino: '#D8FFE7', // Turquesa marino
+          rojoMelon: '#FF8B8B',   // Rojo melón
+          amarilloCrema: '#FFF8BE', // Amarillo crema
+        },
         // Colores del tema actualizados con paleta real Softtek
         primary: '#1a237e',       // Azul oscuro Softtek como color primario
         secondary: '#6a1b9a',     // Púrpura Softtek como color secundario

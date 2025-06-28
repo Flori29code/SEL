@@ -21,6 +21,11 @@
     background: linear-gradient(135deg, #1a237e 0%, #6a1b9a 50%, #e91e63 100%);
   }
 
+  /* Gradiente específico para Nuppi */
+  .gradient-nuppi-bg {
+    background: linear-gradient(135deg, #00274B 0%, #00B652 50%, #A8FFCE 100%);
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -47,6 +52,15 @@
 
   .btn-softtek-purple {
     @apply bg-softtek-purple hover:bg-softtek-purple/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
+  }
+
+  /* Botones específicos para Nuppi */
+  .btn-nuppi-primary {
+    @apply bg-nuppi-verde hover:bg-nuppi-verde/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
+  }
+
+  .btn-nuppi-secondary {
+    @apply bg-nuppi-azulOscuro hover:bg-nuppi-azulOscuro/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg;
   }
 
   .card-shadow {
@@ -96,6 +110,28 @@
 
   .gradient-softtek-cyan {
     background: linear-gradient(135deg, #00bcd4 0%, #26c6da 100%);
+  }
+
+  /* Gradientes para Nuppi */
+  .gradient-nuppi-primary {
+    background: linear-gradient(135deg, #00B652 0%, #A8FFCE 100%);
+  }
+
+  .gradient-nuppi-hero {
+    background: linear-gradient(135deg, #00274B 0%, #00B652 50%, #A8FFCE 100%);
+  }
+
+  .gradient-nuppi-card {
+    background: linear-gradient(135deg, #D8FFE7 0%, #A8FFCE 100%);
+  }
+
+  /* Estilos de formulario para Nuppi */
+  .nuppi-input {
+    @apply w-full px-4 py-3 border border-nuppi-blancoGris rounded-lg focus:outline-none focus:ring-2 focus:ring-nuppi-verde focus:border-nuppi-verde transition-colors;
+  }
+
+  .nuppi-input-error {
+    @apply border-nuppi-rojoMelon focus:ring-nuppi-rojoMelon;
   }
 }
 
@@ -157,4 +193,45 @@
 
 .border-softtek-cyan {
   border-color: #00bcd4;
+}
+
+/* Estilos adicionales para la paleta de Nuppi */
+.text-nuppi-verde {
+  color: #00B652;
+}
+
+.text-nuppi-azulOscuro {
+  color: #00274B;
+}
+
+.text-nuppi-turquesaClaro {
+  color: #A8FFCE;
+}
+
+.text-nuppi-amarilloCrema {
+  color: #FFF8BE;
+}
+
+.bg-nuppi-verde {
+  background-color: #00B652;
+}
+
+.bg-nuppi-azulOscuro {
+  background-color: #00274B;
+}
+
+.bg-nuppi-turquesaClaro {
+  background-color: #A8FFCE;
+}
+
+.bg-nuppi-turquesaMarino {
+  background-color: #D8FFE7;
+}
+
+.border-nuppi-verde {
+  border-color: #00B652;
+}
+
+.border-nuppi-azulOscuro {
+  border-color: #00274B;
 }

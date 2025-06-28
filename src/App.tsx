@@ -11,6 +11,7 @@ import PricingSection from './presentation/components/PricingSection';
 import ContactForm from './presentation/components/ContactForm';
 import CertificateVerification from './presentation/components/CertificateVerification';
 import CertificatePage from './presentation/pages/CertificatePage';
+import NuppiPage from './presentation/pages/NuppiPage';
 
 // Página principal con todos los componentes
 const HomePage: React.FC = () => {
@@ -35,6 +36,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/certificado/:code" element={<CertificatePage />} />
+        <Route path="/nuppi" element={<NuppiPage />} />
       </Routes>
     </Router>
   );
