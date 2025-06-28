@@ -35,30 +35,15 @@ export class PDFCertificateService {
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      // Nombre del estudiante (posición ajustada para tu plantilla)
-      ctx.font = 'bold 52px Arial, sans-serif';
-      ctx.fillText(certificate.studentName, canvas.width / 2, canvas.height * 0.42);
-
-      // Curso (posición ajustada)
-      ctx.font = 'bold 36px Arial, sans-serif';
-      ctx.fillStyle = '#1e40af'; // Azul más oscuro
-      ctx.fillText(certificate.courseName, canvas.width / 2, canvas.height * 0.55);
-
-      // Fecha de finalización (posición inferior)
-      ctx.font = '22px Arial, sans-serif';
-      ctx.fillStyle = '#374151'; // Gris oscuro
-      const completionDate = new Date(certificate.completionDate).toLocaleDateString('es-ES', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-      ctx.fillText(`${completionDate}`, canvas.width * 0.82, canvas.height * 0.82);
+      // Nombre del estudiante (posición ajustada para la nueva plantilla)
+      ctx.font = 'bold 48px Arial, sans-serif';
+      ctx.fillText(certificate.studentName, canvas.width / 2, canvas.height * 0.40);
 
       // Código de verificación (esquina inferior derecha)
-      ctx.font = '16px monospace';
-      ctx.fillStyle = '#6b7280'; // Gris
+      ctx.font = 'bold 14px Arial, sans-serif';
+      ctx.fillStyle = '#1e3a8a'; // Azul oscuro
       ctx.textAlign = 'right';
-      ctx.fillText(`${certificate.code}`, canvas.width * 0.95, canvas.height * 0.95);
+      ctx.fillText(certificate.code, canvas.width * 0.95, canvas.height * 0.95);
 
       // Convertir canvas a imagen
       const imageData = canvas.toDataURL('image/jpeg', 0.95);
@@ -116,30 +101,15 @@ export class PDFCertificateService {
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      // Nombre del estudiante (posición ajustada para tu plantilla)
-      ctx.font = 'bold 52px Arial, sans-serif';
-      ctx.fillText(certificate.studentName, canvas.width / 2, canvas.height * 0.42);
-
-      // Curso (posición ajustada)
-      ctx.font = 'bold 36px Arial, sans-serif';
-      ctx.fillStyle = '#1e40af'; // Azul más oscuro
-      ctx.fillText(certificate.courseName, canvas.width / 2, canvas.height * 0.55);
-
-      // Fecha de finalización (posición inferior)
-      ctx.font = '22px Arial, sans-serif';
-      ctx.fillStyle = '#374151'; // Gris oscuro
-      const completionDate = new Date(certificate.completionDate).toLocaleDateString('es-ES', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-      ctx.fillText(`${completionDate}`, canvas.width * 0.82, canvas.height * 0.82);
+      // Nombre del estudiante (posición ajustada para la nueva plantilla)
+      ctx.font = 'bold 48px Arial, sans-serif';
+      ctx.fillText(certificate.studentName, canvas.width / 2, canvas.height * 0.40);
 
       // Código de verificación (esquina inferior derecha)
-      ctx.font = '16px monospace';
-      ctx.fillStyle = '#6b7280'; // Gris
+      ctx.font = 'bold 14px Arial, sans-serif';
+      ctx.fillStyle = '#1e3a8a'; // Azul oscuro
       ctx.textAlign = 'right';
-      ctx.fillText(`${certificate.code}`, canvas.width * 0.95, canvas.height * 0.95);
+      ctx.fillText(certificate.code, canvas.width * 0.95, canvas.height * 0.95);
 
       // Retornar la imagen como data URL
       return canvas.toDataURL('image/jpeg', 0.95);
