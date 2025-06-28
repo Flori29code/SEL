@@ -1,4 +1,4 @@
-import { ENV } from './environment';
+// import { ENV } from './environment'; // No se usa actualmente
 
 // Configuración específica para Nuppi
 export const NUPPI_CONFIG = {

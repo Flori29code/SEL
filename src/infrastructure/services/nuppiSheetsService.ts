@@ -18,11 +18,10 @@ interface NuppiSheetsResponse {
 }
 
 export class NuppiSheetsService {
-  private readonly SHEET_ID = NUPPI_CONFIG.GOOGLE_SHEETS.SHEET_ID;
+  // private readonly SHEET_ID = NUPPI_CONFIG.GOOGLE_SHEETS.SHEET_ID; // No se usa actualmente
   
-  // URL del Google Form creado por el usuario
-  private readonly FORM_ID = '1FAIpQLSeYzSBnTn-roqhGkZZZz2LopSG-ts4oWHlE-5u7zZ_7J3v4LQ';
-  private readonly FORM_URL = `https://docs.google.com/forms/d/e/${this.FORM_ID}/formResponse`;
+  // URL del Google Form creado por el usuario (usando configuración centralizada)
+  private readonly FORM_URL = NUPPI_CONFIG.GOOGLE_FORMS.FORM_URL;
   
   // URL CSV para leer datos (mismo enfoque que certificados)
   private readonly CSV_URL = `https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-rM849ePOqq84r-c6XDKsp4vxRSEw0a8APSNVOHaHVj8FJiks-8zTAlCVrQ64nflLBPishJrGQQG/pub?output=csv`;
@@ -47,18 +46,19 @@ export class NuppiSheetsService {
       // Crear FormData para enviar al Google Form
       const formData = new FormData();
       
-      // Mapear campos a entries REALES del Google Form (funcionan correctamente)
-      formData.append('entry.98071905', userData.nombre);       // Nombre
-      formData.append('entry.795991792', userData.apellido);    // Apellido  
-      formData.append('entry.2036544412', userData.email);      // Email
-      formData.append('entry.642358799', userData.telefono);    // Teléfono
-      formData.append('entry.1559223027', userData.ciudad);     // Ciudad
-      formData.append('entry.1162782197', userData.pais);       // País
-      formData.append('entry.261773568', userData.empresa || ''); // Empresa
-      formData.append('entry.1136133427', userData.cargo || '');  // Cargo
+      // Mapear campos usando configuración centralizada
+      const entryIds = NUPPI_CONFIG.GOOGLE_FORMS.ENTRY_IDS;
+      formData.append(entryIds.NOMBRE, userData.nombre);        // Nombre
+      formData.append(entryIds.APELLIDO, userData.apellido);    // Apellido  
+      formData.append(entryIds.EMAIL, userData.email);          // Email
+      formData.append(entryIds.TELEFONO, userData.telefono);    // Teléfono
+      formData.append(entryIds.CIUDAD, userData.ciudad);        // Ciudad
+      formData.append(entryIds.PAIS, userData.pais);            // País
+      formData.append(entryIds.EMPRESA, userData.empresa || ''); // Empresa
+      formData.append(entryIds.CARGO, userData.cargo || '');    // Cargo
 
       // Enviar datos al Google Form
-      const response = await fetch(this.FORM_URL, {
+      await fetch(this.FORM_URL, {
         method: 'POST',
         body: formData,
         mode: 'no-cors' // Importante para Google Forms
